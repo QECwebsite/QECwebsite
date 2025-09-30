@@ -78,7 +78,9 @@ ul {
   align-items: center;
   gap: 2rem;
   padding: 1rem 2.5vw;
+  position: relative;
 }
+
 
 .brand {
   display: inline-flex;
@@ -106,7 +108,10 @@ ul {
   align-items: center;
   gap: 1.5rem;
   margin-left: auto;
+  list-style: none;
+  padding: 0;
 }
+
 
 .nav-links a {
   font-weight: 600;
@@ -187,6 +192,53 @@ ul {
 .nav-cta {
   margin-left: 1rem;
   white-space: nowrap;
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-toggle:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 3px;
+}
+
+.nav-toggle-bar {
+  width: 22px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle-bar + .nav-toggle-bar {
+  margin-top: 5px;
+}
+
+.site-nav.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-nav.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.site-nav.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .hero {
@@ -755,17 +807,61 @@ main section {
 
 /* Responsive */
 @media (max-width: 1000px) {
+  .nav-inner {
+    gap: 1.25rem;
+  }
+
   .nav-links {
-    order: 3;
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 2.5vw;
+    right: 2.5vw;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-left: 0;
+    padding: 1.25rem 1.5rem;
+    background: rgba(18, 15, 64, 0.96);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 32px 48px -28px rgba(10, 5, 45, 0.6);
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-nav.is-open .nav-links,
+  .nav-links[data-open="true"] {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
     width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0;
+  }
+
+  .nav-links a::after {
+    bottom: 0;
   }
 
   .nav-cta {
     order: 2;
-    margin-left: 0;
+    margin-left: auto;
+    padding: 0.65rem 1.4rem;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    order: 3;
   }
 
   .hero {
@@ -801,7 +897,23 @@ main section {
 
 @media (max-width: 720px) {
   .nav-inner {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    left: 5vw;
+    right: 5vw;
+  }
+
+  .nav-cta {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
   }
 
   .hero-actions {
@@ -828,8 +940,20 @@ main section {
 }
 
 @media (max-width: 520px) {
+  .nav-cta {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
   .nav-links {
-    justify-content: center;
+    left: 6vw;
+    right: 6vw;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .nav-toggle {
+    width: 38px;
+    height: 38px;
   }
 
   .team-highlight-grid {
@@ -916,6 +1040,14 @@ main section {
 .category-card p {
   margin-top: 0.6rem;
 }
+
+
+
+
+
+
+
+
 
 
 
