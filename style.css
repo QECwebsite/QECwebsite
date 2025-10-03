@@ -541,6 +541,7 @@ main section {
   object-fit: contain;          /* scale to fit without cropping */
   filter: grayscale(40%);
   transition: filter 0.3s ease, transform 0.2s ease;
+}
 
 
 .sponsor-card img:hover {
@@ -1087,6 +1088,7 @@ main section {
 .category-card p {
   margin-top: 0.6rem;
 }
+
 
 
 
