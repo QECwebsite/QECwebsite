@@ -522,9 +522,9 @@ main section {
 
 .sponsor-card {
   border-radius: 18px;
-  background: repeating-linear-gradient(135deg, rgba(226, 222, 249, 0.9), rgba(226, 222, 249, 0.9) 12px, rgba(255, 255, 255, 0.9) 12px, rgba(255, 255, 255, 0.9) 24px);
+
   height: 110px;
-  border: 1px dashed rgba(47, 37, 129, 0.35);
+  border: 1px  rgba(47, 37, 129, 0.35);
   box-shadow: inset 0 6px 18px rgba(47, 37, 129, 0.15);
   overflow: hidden;             /* clip children to rounded corners */
   display: flex;                /* center the logo */
@@ -541,7 +541,7 @@ main section {
   object-fit: contain;          /* scale to fit without cropping */
   filter: grayscale(40%);
   transition: filter 0.3s ease, transform 0.2s ease;
-
+}
 
 .sponsor-card img:hover {
   filter: grayscale(0%); /* logos light up on hover */
@@ -1087,3 +1087,4 @@ main section {
 .category-card p {
   margin-top: 0.6rem;
 }
+
