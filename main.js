@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     menu.dataset.open = 'false';
+    document.body.classList.remove('nav-open');
   };
 
   navs.forEach((nav) => {
@@ -22,6 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const state = isOpen ? 'true' : 'false';
       toggle.setAttribute('aria-expanded', state);
       menu.dataset.open = state;
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+        closeMenu(nav, toggle, menu);
+        toggle.focus();
+      }
     });
 
     menu.querySelectorAll('a').forEach((link) => {
