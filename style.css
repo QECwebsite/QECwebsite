@@ -1088,3 +1088,57 @@ main section {
   margin-top: 0.6rem;
 }
 
+
+
+
+
+
+
+/* === 1) Pillar cards: add margins/air === */
+.hero-pillars {
+  gap: 1.25rem;                 /* more breathing room between cards */
+  padding: 1.4rem 1.6rem;       /* space from the container edges */
+}
+
+.hero-pillars .pillar {
+  margin: 0.25rem;              /* subtle outer margin around each card */
+  /* Optional “card” feel: keep if you like the depth */
+  box-shadow: 0 10px 24px -18px rgba(15, 10, 63, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* === 2) Categories: center container & control columns === */
+.category-grid {
+  max-width: 1180px;            /* centers the four columns on large screens */
+  margin: 0 auto;               /* keep centered */
+  justify-items: stretch;       /* cards fill their column */
+}
+
+/* Desktop/Large: exactly 4 per row */
+@media (min-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* Tablet: comfortable 2 per row (optional) */
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile: force 1 per row and keep centered */
+@media (max-width: 639.98px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}
+
+/* Optional: tighten padding for 4-up on smaller laptops */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .category-card { padding: 1.4rem; }
+}
+
