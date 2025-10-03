@@ -432,7 +432,7 @@ main section {
 
 .category-grid {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 10 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1.5rem;
@@ -1031,7 +1031,7 @@ main section {
   }
   .category-card h3 { font-size: 0.95rem; margin: 0.4rem 0 0.35rem; }
   .category-meta   { font-size: 0.8rem; }
-  .category-card p { display: none; } /* optional: hide body copy to keep it clean */
+ x
 }
 
 
@@ -1085,10 +1085,11 @@ main section {
 
 @media (max-width: 359px) {
   .category-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 0.6rem;
   }
 }
+
 
 
 
