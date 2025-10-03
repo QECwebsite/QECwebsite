@@ -528,6 +528,25 @@ main section {
   box-shadow: inset 0 6px 18px rgba(47, 37, 129, 0.15);
 }
 
+
+
+
+
+.sponsor-card img {
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+   filter: grayscale(40%);
+  transition: filter 0.3s ease;
+}
+
+.sponsor-card img:hover {
+  filter: grayscale(0%); /* logos light up on hover */
+}
+
+
+
+
 .faq-section {
   background: var(--color-white);
 }
@@ -1065,6 +1084,7 @@ main section {
 .category-card p {
   margin-top: 0.6rem;
 }
+
 
 
 
