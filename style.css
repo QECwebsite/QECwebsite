@@ -45,6 +45,60 @@ ul {
   padding: 0;
 }
 
+/* Competition Photos Section */
+.competition-photos-section {
+  background: linear-gradient(135deg, rgba(226, 222, 249, 0.4) 0%, rgba(255, 255, 255, 0.95) 100%);
+  padding: 3.5rem 2.5vw;
+  text-align: center;
+  border-bottom: 1px solid rgba(47, 37, 129, 0.08);
+}
+
+.competition-photos-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.competition-photos-content h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 0.85rem;
+}
+
+.competition-photos-content p {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  margin: 0 0 1.75rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 720px) {
+  .competition-photos-section {
+    padding: 3rem 6vw;
+  }
+  
+  .competition-photos-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .competition-photos-content p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .competition-photos-section {
+    padding: 2.75rem 7vw;
+  }
+  
+  .competition-photos-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
 .skip-link {
   position: absolute;
   left: -999px;
@@ -1256,4 +1310,5 @@ main section {
 @media (min-width: 1024px) and (max-width: 1200px) {
   .category-card { padding: 1.4rem; }
 }
+
 
