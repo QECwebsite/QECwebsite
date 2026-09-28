@@ -242,6 +242,14 @@ ul {
   box-shadow: 0 22px 32px -18px rgba(255, 107, 28, 0.75);
 }
 
+.btn-disabled {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 .btn-ghost {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.45);
