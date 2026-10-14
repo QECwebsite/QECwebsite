@@ -936,12 +936,15 @@ main section {
 .director-grid {
   max-width: var(--max-width);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.75rem;
 }
 
 .director-card {
+  flex: 1 1 260px;
+  max-width: 360px;
   background: var(--color-white);
   border-radius: 22px;
   padding: 1.75rem;
@@ -1088,6 +1091,10 @@ main section {
   .team-hero-aside {
     max-width: 100%;
     margin-top: 1.5rem;
+  }
+
+  .director-card {
+    max-width: none;
   }
 }
 
